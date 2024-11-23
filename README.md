@@ -1,5 +1,3 @@
-# Yahtzee-game
-Yahtzee game using dart and flutter
 # CS 442 MP3: Yahtzee
 
 ## 1. Overview
@@ -11,6 +9,7 @@ If you're not familiar with Yahtzee, here are some resources:
 - [The Wikipedia writeup](https://en.wikipedia.org/wiki/Yahtzee)
 - An [online version of the game](https://cardgames.io/yahtzee/)
 
+Before moving on, take a moment to familiarize yourself with the basic setup and rules of the game. You'll need to understand them to complete the assignment.
 
 The primary objective of this MP is to provide you with an opportunity to employ various stateful widgets and state-management techniques to implement a non-trivial, single-page application.
 
@@ -48,6 +47,7 @@ You should lay out your app so that it fits within a 720p (1280x720 pixels) reso
 
 This repository includes a basic Flutter project structure, which you should use as a starting point for your implementation. Do not make changes to the `pubspec.yaml` file (which specifies the project dependencies) without first consulting with us.
 
+You will need to modify `lib/main.dart`, and you can add UI-related source files (e.g., custom `Widget`s) to the `lib/views` directory, data model source files to the `lib/models` directory, and image files to the `assets/images` directory.
 
 ### 3.4. External packages
 
@@ -173,17 +173,26 @@ Your implementation should not make use of any global variables or functions. Al
 
 In your `REPORT.md` file, please indicate which of the listed platforms you have tested your app on. We will test your application by building and running it in one of your selected platforms, and manually verifying that it meets the requirements outlined above.
 
+## 5. Grading
 
-- [x] The app builds without error
-- [x] I tested the app in at least one of the following platforms (check all that apply):
-  - [x] iOS simulator / MacOS
-  - [x] Android emulator
-  - [x] Google Chrome
-- [x] The dice rolling mechanism works correctly
-- [x] The scorecard works correctly
-- [x] Scores are correctly calculated for all categories
-- [x] The game end condition is correctly implemented, and the final score is correctly displayed
-- [x] The game state is reset when the user dismisses the final score
-- [x] The implementation separates layout from data, involving the use of data model classes separate from custom widgets
+This machine problem is worth 50 points, broken down as follows:
 
+- 2 points: A completed `REPORT.md` file with the required information. **Without this we will not evaluate your submission!**
 
+- 8 points: The dice rolling mechanism works correctly, including the ability to hold and unhold dice, and the ability to roll up to (but no more than) three times per turn
+
+- 8 points: The scorecard works correctly, including the ability to register a score for a given category just once
+
+- 4 points: Scores are correctly calculated for all categories, and the total score is correctly updated
+
+- 4 points: The game correctly ends when all categories have been used, and the final score is correctly displayed
+
+- 4 points: The game state is correctly reset when the user dismisses the final score
+
+- 4 points: Your code structure separates layout from data, involving the use of data model classes and avoiding hardcoding game logic/data into widget implementations
+
+- 8 points: Your code is well-structured, easy to read, and does a good job modularizing the UI into separate widgets (at a minimum, as suggested in the "Code structure" section above)
+
+- 8 points: Your implementation makes effective use of stateful widgets and state management techniques to manage the state of the UI
+
+**If your code does not build, you will receive a zero for the machine problem.**
